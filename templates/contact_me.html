@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Contact_Me
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Me</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        input[type=text], input[type=email], textarea {
+            padding: 0;
+            margin: 0;
+        }
+        .contact {
+            display: flex;
+            flex-direction: column;
+        }
+        .linkedin-icon {
+            display: inline-block;
+            width: 1.1em;
+            height: 1.1em;
+            vertical-align: middle;
+            /* Updated the fill color to a custom blue */
+            fill: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero2">
+        <h1 style="margin-top: 5%;">Contact Me</h1>
+        <!-- Added this link with SVG icon -->
+        <p>Connect with me: <a href="https://www.linkedin.com/in/mervyn-lee-771554191/"><svg class="linkedin-icon"><use xlink:href="#linkedin-icon"></use></svg></a></p>
+    </section>
+    <div class="contact-container">
+        <form class="contact" action="/send_email" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name.." required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Your email.." required>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject.." required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Write something.." style="height:100px" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <!-- Added this SVG icon definition -->
+    <svg style="display: none;">
+        <symbol id="linkedin-icon" viewBox="0 0 448 512">
+            <path fill="#fafafa" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM134.3 416H69.3V192h65v224zm-32.5-256.1c-22.7 0-41.1-18.4-41.1-41.1 0-22.7 18.4-41.1 41.1-41.1s41.1 18.4 41.1 41.1c0 22.7-18.4 41.1-41.1 41.1zm256.8 256.1h-65V288.2c0-24.6-.4-56.3-34.3-56.3-34.4 0-39.7 26.8-39.7 54.5V416h-65V192h64v28.9h.9c9.1-17.3 31.4-35.5 64.6-35.5 69 0 81.8 45.4 81.8 104.6V416z"/>
+        </symbol>
+    </svg>
+</body>
+</html>
+{% endblock %}

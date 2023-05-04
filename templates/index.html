@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Wix Clone</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+</head>
+<body>
+	<main>
+		<div class="photo">
+			<img src="static/images/CAT.jpg" alt="Your Name">
+		</div>
+
+		<div class="container-2">
+			<div class="text-container">
+				<h1>Hello</h1>
+				<h2>this is mervyn</h2>
+				<p>blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+			</div>
+			<ul class="circle-list">
+				<li class="circle-item">
+					<a href="{{ url_for('resume') }}" class="circle-link">
+						<div class="circle-content">Resume</div>
+					</a>
+					<a href="{{ url_for('resume') }}" class="circle-link">
+						<div class="circle-content">Link 2</div>
+					</a>
+					<a href="{{ url_for('contact_me') }}" class="circle-link">
+						<div class="circle-content">Contact</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</main>
+</body>
+</html>
+{% endblock %}
